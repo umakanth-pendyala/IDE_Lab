@@ -50,6 +50,18 @@ int dequeue() {
     return element;
 }
 
+void display () {
+    printf("Element in the queue are\n");
+    if (top1 == 0) {
+        printf("The stack is empty");
+    } else {
+        for (int i = 0; i < top1; i++) {
+            printf("%d\t", stack1[i]);
+        }
+    }
+    printf("\n");
+}
+
 int main () {
     int option;
     int element;
@@ -60,10 +72,10 @@ int main () {
         switch (option)
         {
         case 1:
-            
             printf("Enter the element\n");
             scanf("%d", &element);
             enqueue(element);
+            display();
             break;
         case 2:
             element = dequeue();
@@ -72,6 +84,7 @@ int main () {
             }
             else {
                 printf("The dequeued element is :\t %d\n", element);
+                display();
             }
             
             break;
